@@ -1,0 +1,36 @@
+{% extends "formlayout.html" %}
+{% block body %}
+
+
+
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+
+                <hr>
+                
+
+                <div style="text-align: center;" class="my-5">
+                    <h4>{{blog.title}}</h4>
+                    <h5>বানীতেঃ- {{blog.banite}}</h5>
+                    <b>
+                        <p>{{blog.content}}</p>
+                    </b>
+                </div>
+                <div style="position: center;">
+                    <a href="/delete/{{blog.blogsno}}" ><button type="button" class="btn btn-link"
+                            style="color: red;">Delete</button></a>
+                    <a href="/editblog/{{blog.blogsno}}"><button class="btn btn-link"
+                            style="color: blue;">Edit</button></a>
+                </div>
+                <hr>
+                
+
+
+
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

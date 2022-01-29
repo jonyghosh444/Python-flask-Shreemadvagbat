@@ -1,0 +1,64 @@
+{% extends "formlayout.html" %}
+{% block body %}
+
+
+
+<div style="text-align: center;" class="my-5">
+    <h5>{{chap.chapno}} অধ্যায়ঃ- {{chap.chapname}}</h5>
+</div>
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+
+                <div class="2">
+                    <form name="sentMessage" id="contactForm" action="/form/{{chap.srlno}}" method="post" novalidate>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="sloknoen" name="sloknoen" placeholder="শ্লোক"
+                                style="height: 4rem" data-sb-validations="required"></textarea>
+                            <label for="message">শ্লোক নং (ইংরেজীতে)</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="sloknobn" name="sloknobn" placeholder="শ্লোক"
+                                style="height: 4rem" data-sb-validations="required"></textarea>
+                            <label for="message">শ্লোক নং (বাংলায়)</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                            </div>
+                        </div>
+
+                        <div class="form-floating">
+                            <textarea class="form-control" id="slok" name="slok" placeholder="শ্লোক"
+                                style="height: 6rem" data-sb-validations="required"></textarea>
+                            <label for="message">শ্লোক</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="anubad" name="anubad" placeholder="অনুবাদ"
+                                style="height: 9rem" data-sb-validations="required"></textarea>
+                            <label for="message">অনুবাদ</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="tatporjo" name="tatporjo" placeholder="তাৎপর্য"
+                                style="height: 14rem" data-sb-validations="required"></textarea>
+                            <label for="message">তাৎপর্য</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="success"></div>
+                        <div class="form-group">
+                            <button class="btn btn-primary " id="sendMessageButton" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "formlayout.html" %}
+{% block body %}
+
+<div style="text-align: center;" class="my-5">
+    <h5>{{chap.chapno}} অধ্যায়ঃ- {{chap.chapname}}</h5>
+    <h1>{{slsrial}}</h1>
+</div>
+
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <a href="/form/{{chap.srlno}}">
+                    <p style="font-size: 15px; color: blue;"> নতুন শ্লোক যোগকরুন</p>
+                </a>
+                <hr>
+                {% for slk in slok %}
+
+                <div style="text-align: center;" class="my-5">
+                    <h4>শ্লোকঃ {{slk.slksnobn}}</h4>
+                    <b>
+                        <p>{{slk.slok}}</p>
+                    </b>
+                    <p>{{slk.anubad}}</p>
+                </div>
+                <div style="position: center;">
+                    <a href="/fullslok/{{chap.srlno}}/{{slk.allslkno}}" ><button type="button" class="btn btn-link"
+                        style="color: green;">Details</button></a>
+
+                </div>
+                <hr>
+                {% endfor %}
+
+                <a href="/form/{{chap.srlno}}">
+                    <p style="font-size: 15px; color: blue;"> নতুন শ্লোক যোগকরুন</p>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

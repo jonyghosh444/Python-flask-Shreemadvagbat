@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+<title>শ্রীমদ্ভগবত</title>
+
+{% endblock %}
+
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename = 'assets/img/home_bg.jpg')}}')">
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="my-5">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-12">
+
+                            <img src='{{ url_for('static', filename='assets/img/geetacover.jpg' )}}' alt="" width="187"
+                                height="265" float-left>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-12 my-5 py-5">
+
+                            <a href="/grantha">
+                                <h3>শ্রীমদ্ভগবত গীতা</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <hr>
+            <div class="my-5">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-12">
+                            <img src='{{ url_for('static', filename='assets/img/bloglogo.png' )}}' alt="" width="187"
+                                height="265">
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-12 my-5 py-5">
+
+                            <a href="/blog">
+                                <h3>ব্লগ</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endblock %}

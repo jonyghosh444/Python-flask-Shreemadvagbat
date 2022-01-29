@@ -1,0 +1,44 @@
+{% extends "formlayout.html" %}
+{% block body %}
+
+
+
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <a href="/createblog" target="iframe_a" method="get">
+                    <p style="font-size: 15px; color: blue;"> নতুন ব্লগ যোগকরুন</p>
+                </a>
+
+                <hr>
+                {% for blg in blog %}
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <a href="/admin_full_blog/{{blg.blogsno}}">
+                        <h2 class="post-title">{{blg.title}}</h2>
+                        <h3>বানীতেঃ- {{blg.banite}}</h3>
+                        <h4 class="post-subtitle">{{blg.content[0:119]}}...</h4>
+                    </a>
+                    <p class="post-meta">
+                        পোস্টকারী
+                        <a href="{{params['fb_url']}}" target="blank">{{blg.user}}</a>
+                        সময় {{blg.date}}
+                    </p>
+                </div>
+                <hr>
+                {% endfor %}
+
+                <!-- Divider-->
+
+                <!-- Pager-->
+                <a class="btn btn-primary text-uppercase float-left" href="{{prev}}"> &larr; previous</a>
+                <a class="btn btn-primary text-uppercase float-end" href="{{next}}"> Next &rarr;</a>
+
+
+
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

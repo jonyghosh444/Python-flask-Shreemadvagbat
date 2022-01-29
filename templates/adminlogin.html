@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Jayshreekrishna</title>
+    <link href="{{ url_for('static', filename = 'css/adminlogin.css')}}" rel="stylesheet" />
+    
+    
+    <style>
+     
+      body {
+        background-image: url('{{ url_for('static', filename = 'assets/img/admin_bg.jpg')}}');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+        
+      }
+    </style>
+
+    
+
+</head>
+<body>
+  
+    <div class="wrapper fadeInDown">
+      
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          
+          <!-- Icon -->
+          
+          <div class="fadeIn first">
+            <img src="{{ url_for('static', filename = 'assets/logo.png')}}" id="icon" alt="User Icon" />
+          </div>
+      
+          <!-- Login Form -->
+          
+          <form name="sentMessage" id="contactForm" action="/dashboard" method="post" novalidate >
+            <input type="text" id="uname" class="fadeIn second" name="uname" placeholder="login">
+            <input type="text" id="pass" class="fadeIn third" name="pass" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+          </form>
+          
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+          </div>
+        </div>
+        
+      
+    </div>
+  
+
+
+   
+</body>
+</html>
