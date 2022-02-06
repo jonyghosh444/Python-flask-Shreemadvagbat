@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect, flash
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 import json
@@ -329,10 +329,11 @@ def contact():
         entry = Massage(name=name, email=email, phoneno=phone,  massage=message, date=datetime.now())
         db.session.add(entry)
         db.session.commit()
-        mail.send_message("New message in shrimodvogbot" +" from "+name,
-                          sender=email,
-                          recipients=[params["gmail_user"]],
-                          body = message+"\n"+"phone:-"+phone)
+        # mail.send_message("New message in shrimodvogbot" +" from "+name,
+        #                   sender=email,
+        #                   recipients=[params["gmail_user"]],
+        #                   body = message+"\n"+"phone:-"+phone)
+        flash("Your message has been sent successfully.","success")
 
     return render_template('contact.html', params=params)
 
